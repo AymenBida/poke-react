@@ -1,5 +1,5 @@
 import './App.scss';
 
-const App = () => null;
+const App = () => 'kokokok';
 
 export default App;
