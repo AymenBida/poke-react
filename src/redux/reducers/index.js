@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import samples from './samples';
+import pokemon from './pokemon';
 
-export default combineReducers({ samples });
+export default combineReducers({ pokemon });
