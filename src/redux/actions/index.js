@@ -1,8 +1,11 @@
-import GET_POKEMON from './actionTypes';
+import { GET_POKEMON, SEE_DETAILS } from './actionTypes';
 
-const getPokemon = (response) => ({
+export const getPokemon = (response) => ({
   type: GET_POKEMON,
   payload: response.data.results,
 });
 
-export default getPokemon;
+export const seeDetails = (response) => ({
+  type: SEE_DETAILS,
+  payload: response,
+});

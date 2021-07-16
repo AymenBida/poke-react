@@ -1,27 +1,27 @@
 import './App.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import getPokemon from '../redux/actions';
+import { getPokemon, seeDetails } from '../redux/actions';
 import { capitalize, getRange } from '../utilities';
-import callPokemonAPI from '../api';
+import { callPokemonAPI, findPokemon } from '../api';
 
 const App = () => {
   const pokemonCount = getRange(251);
   const pokemonList = useSelector((state) => state.pokemon);
   const dispatch = useDispatch();
 
-  const fetchPokemon = async () => {
-    try {
-      const response = await callPokemonAPI();
-      dispatch(getPokemon(response));
-      return null;
-    } catch (error) {
-      return error;
-    }
+  const fetchAllPokemon = async () => {
+    const response = await callPokemonAPI();
+    dispatch(getPokemon(response));
+  };
+
+  const fetchPokemon = async (id) => {
+    const response = await findPokemon(id);
+    dispatch(seeDetails(response));
   };
 
   useEffect(() => {
-    fetchPokemon();
+    fetchAllPokemon();
   }, []);
 
   return (
@@ -29,7 +29,8 @@ const App = () => {
       {pokemonList
         .map((entry, index) => (
           <li key={pokemonCount[index]}>
-            {`${pokemonCount[index]}. ${capitalize(entry.name)}`}
+            {`${pokemonCount[index]}. ${capitalize(entry.name)} `}
+            <button type="button" onClick={() => { fetchPokemon(pokemonCount[index]); }}>See details</button>
           </li>
         ))}
     </ul>
