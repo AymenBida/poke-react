@@ -1,8 +1,8 @@
-import { GET_POKEMON, SEE_DETAILS } from './actionTypes';
+import { FILTER_NAME, GET_POKEMON, SEE_DETAILS } from './actionTypes';
 
 export const getPokemon = (response) => ({
   type: GET_POKEMON,
-  payload: response.data.results,
+  payload: response,
 });
 
 export const seeDetails = ({ data }) => ({
@@ -13,4 +13,9 @@ export const seeDetails = ({ data }) => ({
     type1: data.types[0].type.name,
     type2: data.types[1]?.type.name ?? null,
   },
+});
+
+export const filterName = ({ value }) => ({
+  type: FILTER_NAME,
+  payload: value,
 });
