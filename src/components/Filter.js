@@ -10,7 +10,10 @@ const Filter = () => {
   };
 
   return (
-    <input type="text" onChange={handleChange} />
+    <div className="d-flex justify-content-end align-items-center">
+      <p className="mb-0 px-2">Search for your pokemon here:</p>
+      <input className="text-center" type="text" onChange={handleChange} placeholder="Pokemon Name" />
+    </div>
   );
 };
 
