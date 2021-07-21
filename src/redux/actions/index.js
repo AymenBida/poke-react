@@ -5,7 +5,12 @@ export const getPokemon = (response) => ({
   payload: response.data.results,
 });
 
-export const seeDetails = (response) => ({
+export const seeDetails = ({ data }) => ({
   type: SEE_DETAILS,
-  payload: response,
+  payload: {
+    name: data.name,
+    image: data.sprites.front_default,
+    type1: data.types[0].type.name,
+    type2: data.types[1]?.type.name ?? null,
+  },
 });

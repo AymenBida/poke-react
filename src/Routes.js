@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import App from './components/App';
 import About from './components/About';
+import PokemonDetails from './components/PokemonDetails';
 
 const Routes = () => (
   <>
@@ -12,6 +13,7 @@ const Routes = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/pokemon" component={App} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/pokemon/:id" component={PokemonDetails} />
       </Switch>
     </BrowserRouter>
   </>

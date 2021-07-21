@@ -1,11 +1,17 @@
 import './App.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getPokemon, seeDetails } from '../redux/actions';
+import { useRouteMatch } from 'react-router';
+import {
+  Link, Route,
+} from 'react-router-dom';
+import { getPokemon } from '../redux/actions';
 import { capitalize, getRange } from '../utilities';
-import { callPokemonAPI, findPokemon } from '../api';
+import { callPokemonAPI } from '../api';
 
 const App = () => {
+  const { path } = useRouteMatch();
+
   const pokemonCount = getRange(251);
   const pokemonList = useSelector((state) => state.pokemon);
   const dispatch = useDispatch();
@@ -15,25 +21,24 @@ const App = () => {
     dispatch(getPokemon(response));
   };
 
-  const fetchPokemon = async (id) => {
-    const response = await findPokemon(id);
-    dispatch(seeDetails(response));
-  };
-
   useEffect(() => {
     fetchAllPokemon();
   }, []);
 
   return (
-    <ul>
-      {pokemonList
-        .map((entry, index) => (
-          <li key={pokemonCount[index]}>
-            {`${pokemonCount[index]}. ${capitalize(entry.name)} `}
-            <button type="button" onClick={() => { fetchPokemon(pokemonCount[index]); }}>See details</button>
-          </li>
-        ))}
-    </ul>
+    <div>
+      <Route exact path={path}>
+        <ul>
+          {pokemonList
+            .map((entry, index) => (
+              <li key={pokemonCount[index]}>
+                {`${pokemonCount[index]}. ${capitalize(entry.name)} `}
+                <Link to={`/pokemon/${pokemonCount[index]}`}>See details</Link>
+              </li>
+            ))}
+        </ul>
+      </Route>
+    </div>
   );
 };
 
