@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 import './styles/Navbar.scss';
 
 const Navbar = () => (
-  <nav>
-    <ul>
-      <li><h1>PokeReact</h1></li>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/pokemon">Pokemon</Link></li>
-      <li><Link to="/about">About</Link></li>
-    </ul>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div className="container-fluid">
+      <h1 className="navbar-brand mb-0 title">PokeReact</h1>
+    </div>
+    <div className="navbar-nav">
+      <Link className="nav-link" to="/">Home</Link>
+      <Link className="nav-link" to="/pokemon">Pokemon</Link>
+      <Link className="nav-link" to="/about">About</Link>
+    </div>
   </nav>
 );
 

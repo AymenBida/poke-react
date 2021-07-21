@@ -8,13 +8,15 @@ import PokemonDetails from './components/PokemonDetails';
 const Routes = () => (
   <>
     <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/pokemon" component={App} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/pokemon/:id" component={PokemonDetails} />
-      </Switch>
+      <div className="container">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/pokemon" component={App} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/pokemon/:id" component={PokemonDetails} />
+        </Switch>
+      </div>
     </BrowserRouter>
   </>
 );
