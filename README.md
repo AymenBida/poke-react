@@ -21,6 +21,10 @@ To get a local copy up and running follow these simple example steps.
 - run `npm install`
 - run `npm run start`
 
+## Live Demo
+
+- Follow [this link](https://bida-poke-react.herokuapp.com/) to try the app
+
 # Author
 
 👤 **Aymen Bida**
