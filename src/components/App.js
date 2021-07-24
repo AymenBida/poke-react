@@ -2,9 +2,7 @@ import './styles/App.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useRouteMatch } from 'react-router';
-import {
-  Link, Route,
-} from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { getPokemon } from '../redux/actions';
@@ -18,7 +16,7 @@ const App = () => {
   const pokemonList = useSelector((state) => state.pokemon);
   const filterValue = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-
+  console.log(pokemonList);
   const filteredList = pokemonList.filter((element) => element.name.match(new RegExp(filterValue, 'gi')));
 
   const fetchAllPokemon = async () => {
