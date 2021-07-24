@@ -16,7 +16,6 @@ const App = () => {
   const pokemonList = useSelector((state) => state.pokemon);
   const filterValue = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  console.log(pokemonList);
   const filteredList = pokemonList.filter((element) => element.name.match(new RegExp(filterValue, 'gi')));
 
   const fetchAllPokemon = async () => {
