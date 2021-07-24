@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/containers/Navbar';
 import Home from './components/Home';
-import App from './components/App';
+import App from './components/containers/App';
 import About from './components/About';
 import PokemonDetails from './components/PokemonDetails';
 import './index.scss';

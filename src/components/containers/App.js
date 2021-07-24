@@ -1,14 +1,14 @@
-import './styles/App.scss';
+import '../styles/App.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useRouteMatch } from 'react-router';
 import { Link, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { getPokemon } from '../redux/actions';
-import { capitalize, numeratePokemon } from '../utilities';
-import { callPokemonAPI } from '../api';
-import Filter from './Filter';
+import { getPokemon } from '../../redux/actions';
+import { capitalize, numeratePokemon } from '../../utilities';
+import { callPokemonAPI } from '../../api';
+import Filter from '../Filter';
 
 const App = () => {
   const { path } = useRouteMatch();
