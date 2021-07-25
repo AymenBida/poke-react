@@ -1,26 +1,29 @@
-## Title
+## PokeReact
 
-> brief description
+> This app is made with React and Redux, and its purpose is for the React/Redux capstone project of Microverse Curriculum
 
 ## Built With 
 
-- JavaScript, React, HTML5 and CSS
+- JavaScript, React, Redux, HTML5 and CSS
+
+### Prerequisites
+
+- Git
+- NodeJs
+- any Modern Browser
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-- git clone `git@github.com:AymenBida/<repo>.git`
-- cd into the `<repo>`
-- open `index.html` 
+- git clone `git@github.com:AymenBida/poke-react.git`
+- cd into the `magic-books`
+- run `npm install`
+- run `npm run start`
 
-### Prerequisites
+## Live Demo
 
-- Get a browser like Chrome and Firefox in their most recent versions
-
-### Install
-
-- Install VSCode or any code editor you prefer
+- Follow [this link](https://bida-poke-react.herokuapp.com/) to try the app
 
 # Author
 
@@ -34,11 +37,11 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/AymenBida/<repo>/issues).
+Feel free to check the [issues page](https://github.com/AymenBida/poke-react/issues).
 
 ## Acknowledgments
 
-If any
+Thanks for Paul Hallett and other PokéAPI contributors around the world.
 
 ## Show your support
 
