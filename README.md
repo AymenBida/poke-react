@@ -17,7 +17,7 @@
 To get a local copy up and running follow these simple example steps.
 
 - git clone `git@github.com:AymenBida/poke-react.git`
-- cd into the `magic-books`
+- cd into the `poke-react`
 - run `npm install`
 - run `npm run start`
 
